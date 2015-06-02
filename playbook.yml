@@ -1,6 +1,5 @@
 ---
 - hosts: all
-  user: root
   tasks:
   - name: Disable Firewall
     service: name=firewalld state=stopped enabled=false

@@ -40,3 +40,5 @@
 #  - name: Wait for server to restart
 #    command: "/sbin/reboot"
 #    sudo: true
+  - name: Install Control Center and Resource Manager
+    yum: name=zenoss-resmgr-service enablerepo=zenoss-stable

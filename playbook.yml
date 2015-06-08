@@ -42,3 +42,5 @@
 #    sudo: true
   - name: Install Control Center and Resource Manager
     yum: name=zenoss-resmgr-service enablerepo=zenoss-stable
+  - name: Reconfigure serviced for FS type
+    command: "sed -i -e 's|^#[^S]*\\(SERVICED_FS_TYPE=\\).*$|\\1btrfs|' /etc/default/serviced"

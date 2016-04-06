@@ -36,7 +36,8 @@ If your output resembles the output below, then NTP is working:
 
 Modify your hosts file to put your Zenoss server's IP
 
+Verify you can ssh to your Zenoss host using ssh keys AND that user can sudo without a password
+
 Run ansible with following:
 
-    ansible -
-
+    ansible-playbook -i hosts playbook.yml 

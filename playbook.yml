@@ -34,13 +34,13 @@
     - docker
     - serviced
   - name: Create BTRFS Filesystem for /var/lib/docker
-    filesystem: fstype=btrfs dev=/dev/xvdb
+    filesystem: fstype=btrfs dev=/dev/vdb
   - name: Mount BTRFS Filesystem for /var/lib/docker
-    mount: name=/var/lib/docker src=/dev/xvdb fstype=btrfs state=present
+    mount: name=/var/lib/docker src=/dev/vdb fstype=btrfs state=present
   - name: Create BTRFS Filesystem for /opt/serviced/var/volumes
-    filesystem: fstype=btrfs dev=/dev/xvdc
+    filesystem: fstype=btrfs dev=/dev/vdc
   - name: Mount BTRFS Filesystem for /opt/serviced/var/volumes
-    mount: name=/opt/serviced/var/volumes src=/dev/xvdc fstype=btrfs state=present
+    mount: name=/opt/serviced/var/volumes src=/dev/vdc fstype=btrfs state=present
 #  - name: Wait for server to restart
 #    command: "/sbin/reboot"
 #    sudo: true

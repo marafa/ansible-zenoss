@@ -25,7 +25,7 @@ requirements:
 Clone this repo:
 
     $ git clone https://github.com/seizadi/ansible-zenoss.git
-	$ cd ansible-zenoss
+    $ cd ansible-zenoss
 
 Make sure NTP running, on AWS make sure UDP port 123 is open outbound. To check:
 
@@ -34,6 +34,7 @@ If your output resembles the output below, then NTP is working:
 
 	synchronised to NTP server (12.34.56.78) at stratum 3 ....
 
+Modify your hosts file to put your Zenoss server's IP
 
 Run ansible with following:
 

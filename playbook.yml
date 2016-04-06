@@ -11,7 +11,7 @@
     - /opt/serviced/var/volumes
     - /var/lib/docker
   - name: Copy docker.repo
-    copy src=files/docker.repo dest=/etc/yum.repos.d owner=root group=root mode=0644
+    copy: src=files/docker.repo dest=/etc/yum.repos.d owner=root group=root mode=0644
 
   - name: Install packages
     yum: name={{ item }} state=present
@@ -19,7 +19,7 @@
     - ntp
     - dnsmasq
     - http://get.zenoss.io/yum/zenoss-repo-1-1.x86_64.rpm
-    - docker-engine
+    - docker-engine-1.9.0
   - name: Set Docker default config
     copy: dest=/etc/sysconfig/docker content='DOCKER_OPTS="--dns=172.17.42.1"\n'
   - name: Install Zenoss Core Service

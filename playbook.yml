@@ -33,6 +33,8 @@
     - dnsmasq
     - docker
     - serviced
+  - name: Reconfigure /lib/systemd/system/docker.service
+    lineinfile: dest=/lib/systemd/system/docker.service regexp='daemon' line='ExecStart=/usr/bin/docker daemon $OPTIONS -H fd://'
   - name: Create BTRFS Filesystem for /var/lib/docker
     filesystem: fstype=btrfs dev=/dev/vdb
   - name: Mount BTRFS Filesystem for /var/lib/docker

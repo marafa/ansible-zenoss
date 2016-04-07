@@ -1,4 +1,8 @@
 ---
+  - name: Add Zenoss Core template
+    shell: serviced template add /tmp/Zenoss.core
+#           serviced template deploy $TEMPLATEID default zenoss
+
   - name: Add Zabbix 3.0 template
     get_url: url=https://raw.githubusercontent.com/monitoringartist/control-center-zabbix/master/Control-Center-Zabbix-3.0-template.json dest=/tmp/Control-Center-Zabbix-3.0-template.json
   - shell: serviced template add /tmp/Control-Center-Zabbix-3.0-template.json

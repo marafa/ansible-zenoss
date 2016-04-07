@@ -1,0 +1,4 @@
+---
+# TemplateID=`serviced template list|grep Zenoss.core| awk '{ print $1 }'`
+# serviced template deploy $TemplateID default zenoss
+

@@ -8,6 +8,8 @@
   - name: Install packages
     yum: name={{ item }} state=present
     with_items:
+    - rpcbind
+    - nfs-utils
     - ntp
     - dnsmasq
     - http://get.zenoss.io/yum/zenoss-repo-1-1.x86_64.rpm

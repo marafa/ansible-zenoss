@@ -1,5 +1,5 @@
 ---
+  - include: user.yml
   - include: config.yml
   - include: service.yml
-  - include: user.yml
   - include: templates.yml

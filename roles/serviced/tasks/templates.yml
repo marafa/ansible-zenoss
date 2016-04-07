@@ -1,28 +1,28 @@
 ---
   - name: Add Zenoss Core template
-    shell: serviced template add /tmp/Zenoss.core
+    shell: serviced template add /opt/serviced/templates/Zenoss.core
 #           serviced template deploy $TEMPLATEID default zenoss
 
   - name: Add Zabbix 3.0 template
-    get_url: url=https://raw.githubusercontent.com/monitoringartist/control-center-zabbix/master/Control-Center-Zabbix-3.0-template.json dest=/tmp/Control-Center-Zabbix-3.0-template.json
-  - shell: serviced template add /tmp/Control-Center-Zabbix-3.0-template.json
+    get_url: url=https://raw.githubusercontent.com/monitoringartist/control-center-zabbix/master/Control-Center-Zabbix-3.0-template.json dest=/opt/serviced/templates/Control-Center-Zabbix-3.0-template.json
+  - shell: serviced template add /opt/serviced/templates/Control-Center-Zabbix-3.0-template.json
 
   - name: Add Elasticsearch 2.0 template
-    get_url: url=https://raw.githubusercontent.com/monitoringartist/control-center-elasticsearch/master/Control-Center-Eleasticsearch-2.0-template.json dest=/tmp/Control-Center-Eleasticsearch-2.0-template.json
-  - shell: serviced template add /tmp/Control-Center-Eleasticsearch-2.0-template.json
+    get_url: url=https://raw.githubusercontent.com/monitoringartist/control-center-elasticsearch/master/Control-Center-Eleasticsearch-2.0-template.json dest=/opt/serviced/templates/Control-Center-Eleasticsearch-2.0-template.json
+  - shell: serviced template add /opt/serviced/templates/Control-Center-Eleasticsearch-2.0-template.json
 
   - name: Add Zenoss-Searcher template
-    get_url: url=https://raw.githubusercontent.com/monitoringartist/control-center-zenoss-searcher/master/Control-Center-Zenoss-Searcher-template.json dest=/tmp/Control-Center-Zenoss-Searcher-template.json
-  - shell: serviced template add /tmp/Control-Center-Zenoss-Searcher-template.json
+    get_url: url=https://raw.githubusercontent.com/monitoringartist/control-center-zenoss-searcher/master/Control-Center-Zenoss-Searcher-template.json dest=/opt/serviced/templates/Control-Center-Zenoss-Searcher-template.json
+  - shell: serviced template add /opt/serviced/templates/Control-Center-Zenoss-Searcher-template.json
 
   - name: Add Jenkins template
-    get_url: url=https://raw.githubusercontent.com/monitoringartist/control-center-jenkins/master/Control-Center-Jenkins-template.json dest=/tmp/Control-Center-Jenkins-template.json
-  - shell: serviced template add /tmp/Control-Center-Jenkins-template.json
+    get_url: url=https://raw.githubusercontent.com/monitoringartist/control-center-jenkins/master/Control-Center-Jenkins-template.json dest=/opt/serviced/templates/Control-Center-Jenkins-template.json
+  - shell: serviced template add /opt/serviced/templates/Control-Center-Jenkins-template.json
 
   - name: Add Gerrit template
-    get_url: url=https://raw.githubusercontent.com/monitoringartist/control-center-gerrit/master/Control-Center-Gerrit-template.json dest=/tmp/Control-Center-Gerrit-template.json
-  - shell: serviced template add /tmp/Control-Center-Gerrit-template.json
+    get_url: url=https://raw.githubusercontent.com/monitoringartist/control-center-gerrit/master/Control-Center-Gerrit-template.json dest=/opt/serviced/templates/Control-Center-Gerrit-template.json
+  - shell: serviced template add /opt/serviced/templates/Control-Center-Gerrit-template.json
 
   - name: Add Grafana-Demo template
-    get_url: url=https://raw.githubusercontent.com/monitoringartist/control-center-grafana-demo/master/Control-Center-Grafana-Demo-template.json dest=/tmp/Control-Center-Grafana-Demo-template.json
-  - shell: serviced template add /tmp/Control-Center-Grafana-Demo-template.json
+    get_url: url=https://raw.githubusercontent.com/monitoringartist/control-center-grafana-demo/master/Control-Center-Grafana-Demo-template.json dest=/opt/serviced/templates/Control-Center-Grafana-Demo-template.json
+  - shell: serviced template add /opt/serviced/templates/Control-Center-Grafana-Demo-template.json

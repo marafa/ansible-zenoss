@@ -7,11 +7,11 @@
 # - checks
 # - network
       - firewall
-#      - logs
+      - logs
       - selinux
       - filesystems
       - repos
 #      - docker
-#      - serviced
+      - serviced
       - old
       - complete

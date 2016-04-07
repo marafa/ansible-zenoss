@@ -1,6 +1,4 @@
 ---
-  - name: Set Docker default config
-    copy: dest=/etc/sysconfig/docker content='DOCKER_OPTS="--dns=172.17.42.1"\n'
   - name: Reconfigure NFS
     command: "sed -i -e 's/\\(Requires=.*\\)rpcbind.target/\\1rpcbind.service/' /usr/lib/systemd/system/nfs-server.service"
   - name: Enable services
@@ -10,14 +8,6 @@
     - dnsmasq
     - docker
     - serviced
-  - name: Reconfigure /lib/systemd/system/docker.service
-    lineinfile: dest=/lib/systemd/system/docker.service regexp='daemon' line='ExecStart=/usr/bin/docker daemon $OPTIONS -H fd://'
 #  - name: Wait for server to restart
 #    command: "/sbin/reboot"
 #    sudo: true
-  - name: Install Control Center and Resource Manager
-    yum: name=zenoss-resmgr-service enablerepo=zenoss-stable
-  - name: Install Zenoss Core Service
-    yum: name=zenoss-core-service enablerepo=zenoss-stable
-  - name: Reconfigure serviced for FS type
-    command: "sed -i -e 's|^#[^S]*\\(SERVICED_FS_TYPE=\\).*$|\\1btrfs|' /etc/default/serviced"

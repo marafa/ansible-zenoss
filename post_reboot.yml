@@ -1,6 +1,0 @@
----
-- hosts: all
-  gather_facts: true
-  sudo: yes
-  tasks:
-  - debug: msg="docker ip is {{ ansible_docker0.ipv4.address }}"

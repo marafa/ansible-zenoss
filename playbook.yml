@@ -13,5 +13,6 @@
       - repos
 #      - docker
       - serviced
+      - services
       - old
       - complete

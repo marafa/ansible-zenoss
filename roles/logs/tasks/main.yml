@@ -1,5 +1,3 @@
 ---
   - name: Create /var/log/journal
     file: path=/var/log/journal state=directory
-  - name: Restart systemd-journal
-    service: name=systemd-journald state=restarted

@@ -1,0 +1,15 @@
+---
+  - name: Create BTRFS mountpoints
+    file: path={{ item }} state=directory
+    with_items:
+    - /opt/serviced/var/volumes
+    - /var/lib/docker
+  - name: Create BTRFS Filesystem for /var/lib/docker
+    filesystem: fstype=btrfs dev=/dev/vdb
+  - name: Mount BTRFS Filesystem for /var/lib/docker
+    mount: name=/var/lib/docker src=/dev/vdb fstype=btrfs state=present
+  - name: Create BTRFS Filesystem for /opt/serviced/var/volumes
+    filesystem: fstype=btrfs dev=/dev/vdc
+  - name: Mount BTRFS Filesystem for /opt/serviced/var/volumes
+    mount: name=/opt/serviced/var/volumes src=/dev/vdc fstype=btrfs state=present
+

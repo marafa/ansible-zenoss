@@ -1,23 +1,4 @@
 ---
-  - name: Disable Firewall
-    service: name=firewalld state=stopped enabled=false
-  - name: Disable SELinux
-    selinux: state=disabled
-  - name: Create BTRFS mountpoints
-    file: path={{ item }} state=directory
-    with_items:
-    - /opt/serviced/var/volumes
-    - /var/lib/docker
-  - name: Copy docker.repo
-    copy: src=docker.repo dest=/etc/yum.repos.d owner=root group=root mode=0644
-
-  - name: Install packages
-    yum: name={{ item }} state=present
-    with_items:
-    - ntp
-    - dnsmasq
-    - http://get.zenoss.io/yum/zenoss-repo-1-1.x86_64.rpm
-    - docker-engine-1.9.0
   - name: Set Docker default config
     copy: dest=/etc/sysconfig/docker content='DOCKER_OPTS="--dns=172.17.42.1"\n'
   - name: Reconfigure NFS
@@ -31,14 +12,6 @@
     - serviced
   - name: Reconfigure /lib/systemd/system/docker.service
     lineinfile: dest=/lib/systemd/system/docker.service regexp='daemon' line='ExecStart=/usr/bin/docker daemon $OPTIONS -H fd://'
-  - name: Create BTRFS Filesystem for /var/lib/docker
-    filesystem: fstype=btrfs dev=/dev/vdb
-  - name: Mount BTRFS Filesystem for /var/lib/docker
-    mount: name=/var/lib/docker src=/dev/vdb fstype=btrfs state=present
-  - name: Create BTRFS Filesystem for /opt/serviced/var/volumes
-    filesystem: fstype=btrfs dev=/dev/vdc
-  - name: Mount BTRFS Filesystem for /opt/serviced/var/volumes
-    mount: name=/opt/serviced/var/volumes src=/dev/vdc fstype=btrfs state=present
 #  - name: Wait for server to restart
 #    command: "/sbin/reboot"
 #    sudo: true
@@ -48,5 +21,3 @@
     yum: name=zenoss-core-service enablerepo=zenoss-stable
   - name: Reconfigure serviced for FS type
     command: "sed -i -e 's|^#[^S]*\\(SERVICED_FS_TYPE=\\).*$|\\1btrfs|' /etc/default/serviced"
-  - name: Installation complete
-    debug: msg="Visit http://{{ ansible_fqdn }}:8080 to continue"

@@ -1,0 +1,4 @@
+---
+  - name: Installation complete
+    debug: msg="Visit http://{{ ansible_fqdn }}:8080 to continue"
+

@@ -4,5 +4,9 @@
     gather_facts: true
     sudo: yes
     roles:
-      - old
+      - firewall
+      - selinux
+      - filesystems
       - repos
+      - old
+      - complete

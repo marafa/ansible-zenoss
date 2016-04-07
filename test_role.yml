@@ -4,5 +4,4 @@
     gather_facts: true
     sudo: yes
     roles:
-      - repos
-      - serviced
+      - filesystems

@@ -1,0 +1,9 @@
+---
+  - name: Restart services
+    service: name={{ item }} state=restarted
+    with_items:
+    - ntpd
+    - dnsmasq
+    - docker
+    - serviced
+

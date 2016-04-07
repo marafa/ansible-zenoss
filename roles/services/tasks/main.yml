@@ -1,10 +1,3 @@
 ---
-  - name: Restart services
-    service: name={{ item }} state=restarted
-    with_items:
-    - systemd-journald 
-    - ntpd
-    - dnsmasq
-    - docker
-    - serviced
-
+  - include: nfs.yml
+  - include: restart.yml

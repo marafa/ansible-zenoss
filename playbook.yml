@@ -11,7 +11,7 @@
       - selinux
       - filesystems
       - repos
-#      - docker
+      - docker
       - serviced
       - services
       - old

@@ -1,4 +1,4 @@
 ---
-  - name: Installation complete
-    debug: msg="Visit http://{{ ansible_fqdn }}:8080 to continue"
+  - name: Zenoss Controll Center installation complete
+    debug: msg="Visit https://{{ ansible_fqdn }} to continue"
 

@@ -1,0 +1,3 @@
+---
+  - name: Add ccuser
+    user: name=ccuser comment="Zenoss Control Center user" password=password

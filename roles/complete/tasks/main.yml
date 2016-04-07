@@ -1,4 +1,4 @@
 ---
   - name: Zenoss Controll Center installation complete
-    debug: msg="Visit https://{{ ansible_fqdn }} to continue"
+    debug: msg="Login to https://{{ ansible_fqdn }} to continue with user:ccuser and password:password"
 

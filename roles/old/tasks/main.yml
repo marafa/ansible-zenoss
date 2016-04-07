@@ -1,6 +1,4 @@
 ---
-- hosts: all
-  tasks:
   - name: Disable Firewall
     service: name=firewalld state=stopped enabled=false
   - name: Disable SELinux
@@ -11,7 +9,7 @@
     - /opt/serviced/var/volumes
     - /var/lib/docker
   - name: Copy docker.repo
-    copy: src=files/docker.repo dest=/etc/yum.repos.d owner=root group=root mode=0644
+    copy: src=docker.repo dest=/etc/yum.repos.d owner=root group=root mode=0644
 
   - name: Install packages
     yum: name={{ item }} state=present

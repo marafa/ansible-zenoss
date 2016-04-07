@@ -1,0 +1,12 @@
+#- name: Install deltarpm and upgrade all packages
+#  yum: name={{ item }} state=latest
+#  with_items:
+#  - deltarpm
+#  - \*
+#
+- name: Install deltarpm
+  yum: name=deltarpm state=latest
+- name: Configure yum to skip-broken
+  lineinfile: dest=/etc/yum.conf line="skip_broken=1"
+- name: Yum -y update
+  yum: name=* state=latest 

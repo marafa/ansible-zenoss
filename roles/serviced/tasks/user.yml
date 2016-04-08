@@ -1,6 +1,8 @@
 ---
 # password generated with 
 # openssl passwd -salt 'password' -1 'password'$1$password$Da2mWXlxe6J7jtww12SNG/
+  - name: Add serviceman group
+    group: name=serviceman state=present
 
   - name: Add user - ccuser
     user: name=ccuser comment="Zenoss Control Center user" password="$1$password$Da2mWXlxe6J7jtww12SNG/"

@@ -6,7 +6,7 @@
     roles:
 # - checks
 # - network
-      - firewall
+      - network
       - logs
       - selinux
       - filesystems

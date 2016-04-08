@@ -1,9 +1,9 @@
 ---
-   - name: Collect facts after docker start
-     setup:
+  - name: Collect facts after docker start
+    setup:
 
-   - name: Set FS type and DNS
-     lineinfile: dest=/etc/sysconfig/docker line='DOCKER_OPTS="-s btrfs--dns={{ ansible_docker0.ipv4.address }}"\n' state=present
+  - name: Set FS type and DNS
+    lineinfile: dest=/etc/sysconfig/docker line='DOCKER_OPTS="-s btrfs--dns={{ ansible_docker0.ipv4.address }}"\n' state=present
 
   - name: Reconfigure /lib/systemd/system/docker.service
     lineinfile: dest=/lib/systemd/system/docker.service regexp='daemon' line='ExecStart=/usr/bin/docker daemon $OPTIONS -H fd://'

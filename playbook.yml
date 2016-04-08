@@ -11,8 +11,8 @@
       - selinux
       - filesystems
       - repos
-      - docker
       - serviced
       - services
+      - docker-config
       - containers
       - complete

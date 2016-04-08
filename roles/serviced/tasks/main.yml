@@ -3,3 +3,4 @@
   - include: config.yml
   - include: templates.yml
   - include: zenoss-core.yml
+  - include: packages.yml

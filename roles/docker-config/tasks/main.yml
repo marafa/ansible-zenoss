@@ -2,8 +2,17 @@
   - name: Collect facts after docker start
     setup:
 
-  - name: Set FS type and DNS
-    lineinfile: dest=/etc/sysconfig/docker line='DOCKER_OPTS="-s btrfs--dns={{ ansible_docker0.ipv4.address }}"\n' state=present
 
-  - name: Reconfigure /lib/systemd/system/docker.service
-    lineinfile: dest=/lib/systemd/system/docker.service regexp='daemon' line='ExecStart=/usr/bin/docker daemon $OPTIONS -H fd://'
+  - name: Touch /etc/sysconfig/docker
+    file: path=/etc/sysconfig/docker owner=root group=root mode=0644 state=touch
+
+  - name: Set FS type and DNS
+    lineinfile: dest=/etc/sysconfig/docker line='DOCKER_OPTS="-s btrfs --dns={{ ansible_docker0.ipv4.address }}"\n' state=present regexp='^DOCKER_OPTS'
+
+  - name: Add EnvironmentFile to /lib/systemd/system/docker.service
+    ini_file: dest=/lib/systemd/system/docker.service section=Service option=EnvironmentFile value="-/etc/sysconfig/docker"
+
+  - name: Add OPTIONS to  /lib/systemd/system/docker.service
+#    lineinfile: dest=/lib/systemd/system/docker.service regexp='daemon' line='ExecStart=/usr/bin/docker daemon $OPTIONS -H fd://'
+    ini_file: dest=/lib/systemd/system/docker.service section=Service option=ExecStart value="/usr/bin/docker daemon $OPTIONS -H fd://"
+

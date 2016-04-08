@@ -4,4 +4,5 @@
     gather_facts: true
     sudo: yes
     roles:
+      - docker-config
       - containers

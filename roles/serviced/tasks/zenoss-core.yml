@@ -3,8 +3,10 @@
   - name: Get Zenoss.core TemplateID
     shell: serviced template list|grep Zenoss.core| awk '{ print $1 }'
     register: TemplateID
+  - debug: msg="TemplateID {{ TemplateID }}"
+  - debug: msg="TemplateID {{ TemplateID.stdout }}"
     
 # serviced template deploy $TemplateID default zenoss
   - name: Deploy Zenoss.core template
-    shell: serviced template deploy {{ TemplateID }} default zenoss
+    shell: serviced template deploy {{ TemplateID.stdout }} default zenoss
 

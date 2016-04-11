@@ -14,3 +14,6 @@
   - name: Add OPTIONS to  /lib/systemd/system/docker.service
     ini_file: dest=/lib/systemd/system/docker.service section=Service option=ExecStart value="/usr/bin/docker daemon -H fd:// $OPTIONS"
 
+  - name: Reload systemd daemon
+    shell: systemctl daemon-reload
+

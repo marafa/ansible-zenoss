@@ -15,5 +15,5 @@
       - serviced
       - services
       - docker-config
-      - containers
+      - zenoss-config
       - complete

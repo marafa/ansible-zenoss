@@ -1,7 +1,0 @@
----
-  - name: Start mariadb service
-    shell: serviced service start mariadb
-
-  - name: Install Percona Toolkit
-    shell:  serviced service run zope install-percona
-

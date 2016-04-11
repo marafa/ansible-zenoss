@@ -1,8 +1,0 @@
----
-  - name: Reload systemd daemon
-    shell: systemctl daemon-reload
-#  - name: Restart docker service
-#    service: name=docker state=restarted
-#  - name: Restart serviced service
-#    service: name=serviced state=restarted
-#  - include: percona.yml

@@ -5,4 +5,4 @@
 #    service: name=docker state=restarted
 #  - name: Restart serviced service
 #    service: name=serviced state=restarted
-  - include: percona.yml
+#  - include: percona.yml

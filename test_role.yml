@@ -4,9 +4,8 @@
     gather_facts: true
     sudo: yes
     roles:
-      - checks
-#      - repos
-#      - filesystems
-#      - services
-#      - docker-config
+      - repos
+      - filesystems
+      - services
+      - docker-config
 #      - containers

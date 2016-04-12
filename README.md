@@ -1,10 +1,11 @@
 # Zenoss Installer using Ansible
 
-Uses Ansible to install Zenoss 5.0 core. 
+Uses Ansible to install Zenoss 5.1 core. 
 
-Detailed Instructions under: (http://www.zenoss.com/sites/default/files/documentation/Zenoss_Core_Installation_Guide_r5.0.x_d1051.15.120.pdf)
-
-Ansible Docs: http://docs.ansible.com/
+# Documentation
+ * Installation Guide: https://www.zenoss.com/sites/default/files/documentation/Zenoss_Resource_Manager_Installation_Guide_r5.1.1_d1052.16.060.pdf
+ * Configuration Guide: https://www.zenoss.com/sites/default/files/documentation/Zenoss_Resource_Manager_Configuration_Guide_r5.1.1_d1042.16.061.1.pdf
+ * Ansible Docs: http://docs.ansible.com/
 
 
 ## Minimum Recommended Server

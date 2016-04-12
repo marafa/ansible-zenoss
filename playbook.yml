@@ -5,19 +5,19 @@
     sudo: yes
     roles:
 # from installation guide
-      - checks
-      - network
-      - logs
-      - selinux
-      - filesystems
-      - check_docker_dir
-      - repos
-      - check_docker_dir
-      - serviced
-      - services
-      - check_docker_dir
-      - docker-config
-      - check_docker_dir
-      - complete
+      - installation_checks
+      - installation_network
+      - installation_logs
+      - installation_selinux
+      - installation_filesystems
+      - installation_check_docker_dir
+      - installation_repos
+      - installation_check_docker_dir
+      - installation_serviced
+      - installation_services
+      - installation_check_docker_dir
+      - installation_docker-config
+      - installation_check_docker_dir
+      - installation_complete
 # from configuration guide
-      - zenoss-config
+      - config_zrm-config

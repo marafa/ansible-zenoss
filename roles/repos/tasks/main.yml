@@ -1,4 +1,0 @@
----
-- include: yum.yml
-- include: docker.yml
-- include: zenoss.yml

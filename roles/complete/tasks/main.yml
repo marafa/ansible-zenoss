@@ -1,6 +1,0 @@
----
-  - name: Zenoss Control Center installation complete
-    debug: msg="Login to https://{{ ansible_fqdn }} to continue with user:ccuser and password:password"
-
-  - name: Zenoss Core installation complete
-    debug: msg="Login to https://zenoss5.{{ ansible_fqdn }} with user:admin and password:password"

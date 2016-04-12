@@ -1,3 +1,0 @@
----
-  - include: firewalld.yml
-  - include: hosts.yml

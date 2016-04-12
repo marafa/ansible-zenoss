@@ -4,10 +4,4 @@
     gather_facts: true
     sudo: yes
     roles:
-      - serviced
-#      - repos
-#      - filesystems
-#      - services
-#      - docker-config
-      - containers
-      - complete
+      - config_zrm-start

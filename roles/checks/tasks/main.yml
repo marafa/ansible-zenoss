@@ -1,6 +1,0 @@
----
-  - include: arch.yml 
-  - include: cpu.yml 
-  - include: fs.yml
-  - include: RAM.yml
-

@@ -1,3 +1,0 @@
----
-  - name: Check File Systems
-    debug: msg="Check File Systems"

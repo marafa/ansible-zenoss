@@ -1,3 +1,0 @@
----
-  - include: nfs.yml
-  - include: restart.yml

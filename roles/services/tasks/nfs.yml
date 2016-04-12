@@ -1,3 +1,0 @@
----
-  - name: Reconfigure NFS
-    command: "sed -i -e 's/\\(Requires=.*\\)rpcbind.target/\\1rpcbind.service/' /usr/lib/systemd/system/nfs-server.service"

@@ -1,6 +1,0 @@
----
-  - name: Install Control Center and Resource Manager
-    yum: name=zenoss-resmgr-service enablerepo=zenoss-stable
-  - name: Install Zenoss Core Service
-    yum: name=zenoss-core-service enablerepo=zenoss-stable
-

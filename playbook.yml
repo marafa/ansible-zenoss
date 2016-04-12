@@ -4,16 +4,20 @@
     gather_facts: true
     sudo: yes
     roles:
-# - checks
-# - network
+# from installation guide
       - checks
       - network
       - logs
       - selinux
       - filesystems
+      - check_docker_dir
       - repos
+      - check_docker_dir
       - serviced
       - services
+      - check_docker_dir
       - docker-config
-      - zenoss-config
+      - check_docker_dir
       - complete
+# from configuration guide
+      - zenoss-config

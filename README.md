@@ -25,7 +25,7 @@ requirements:
 
 Clone this repo:
 
-    $ git clone https://github.com/seizadi/ansible-zenoss.git
+    $ git clone https://github.com/marafa/ansible-zenoss.git
     $ cd ansible-zenoss
 
 Make sure NTP running, on AWS make sure UDP port 123 is open outbound. To check:

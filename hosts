@@ -1,4 +1,4 @@
 [master]
-#127.0.0.1
-192.168.122.120
-#192.168.122.236
+#localhost ansible_ssh_host=127.0.0.1
+zenoss_test1 ansible_ssh_host=192.168.122.120
+zenoss_test2 ansible_ssh_host=192.168.122.236

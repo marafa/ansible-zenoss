@@ -1,0 +1,3 @@
+---
+  - name: Attach to the RabbitMQ container
+    shell: 

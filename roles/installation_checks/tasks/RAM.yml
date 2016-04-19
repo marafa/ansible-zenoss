@@ -1,0 +1,3 @@
+---
+  - name: Check RAM
+    debug: msg="Continue only if {{ ansible_memory_mb.real.total }} >= 20480"

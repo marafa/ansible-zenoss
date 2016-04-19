@@ -1,0 +1,7 @@
+---
+  - name: Start of Zenoss Resource Configuration Guide
+    debug: msg="URL https://www.zenoss.com/sites/default/files/documentation/Zenoss_Resource_Manager_Configuration_Guide_r5.1.1_d1042.16.061.1.pdf"
+
+  - name: Warning
+    debug: msg="Change default passwords via Control Center"
+

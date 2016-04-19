@@ -1,0 +1,7 @@
+---
+  - include: add_host.yml
+  - include: user.yml
+  - include: config.yml
+  - include: templates.yml
+  - include: zenoss-core.yml
+  - include: packages.yml

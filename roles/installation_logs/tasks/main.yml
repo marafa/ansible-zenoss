@@ -1,0 +1,3 @@
+---
+  - name: Create /var/log/journal
+    file: path=/var/log/journal state=directory

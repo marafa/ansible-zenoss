@@ -1,0 +1,18 @@
+---  
+  - name: Get Zenoss.core TemplateID
+    shell: serviced template list|grep Zenoss.core| awk '{ print $1 }'
+    register: TemplateID
+
+  - name: Copy packages.txt
+    template: src=packages.txt dest=/tmp/packages.txt 
+
+  - name: Verify packages.txt syntax
+    shell: serviced script parse /tmp/packages.txt
+
+  - name: Install additional packages
+    shell: serviced script run /tmp/packages.txt --service {{ TemplateID }}
+  - name: Clean up /tmp/packages.txt
+    file: name=/tmp/packages.txt state=absent
+
+
+

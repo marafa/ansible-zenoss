@@ -1,0 +1,8 @@
+---
+  - name: Get Zenoss.core TemplateID
+    shell: serviced template list|grep Zenoss.core| awk '{ print $1 }'
+    register: TemplateID
+    
+  - name: Deploy Zenoss.core template
+    shell: serviced template deploy {{ TemplateID.stdout }} default zenoss
+

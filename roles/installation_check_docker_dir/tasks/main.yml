@@ -1,0 +1,13 @@
+---
+  - name: Check if path exists
+    stat: path=/var/lib/docker
+    register: check_path
+
+  - name: It exists
+    debug: msg='Yay, the path exists!'
+    when: check_path.stat.exists
+
+  - name: It doesn't exist
+    debug: msg="Boohoo, the path doesn't exist..."
+    when: check_path.stat.exists == false
+

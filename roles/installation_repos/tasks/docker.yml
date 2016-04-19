@@ -1,0 +1,6 @@
+---
+  - name: Copy docker.repo
+    copy: src=docker.repo dest=/etc/yum.repos.d owner=root group=root mode=0644
+  - name: Install docker 1.9.0
+    yum: name=docker-engine-1.9.0 state=present
+

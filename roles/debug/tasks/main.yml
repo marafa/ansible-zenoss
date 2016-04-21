@@ -1,0 +1,4 @@
+---
+#  - debug: msg="disk1 is {{ disk1 }}"
+  - debug: var=disk1
+  - debug: var=disk1.stat

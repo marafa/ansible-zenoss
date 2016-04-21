@@ -4,12 +4,15 @@
     with_items:
     - /opt/serviced/var/volumes
     - /var/lib/docker
-  - name: Create BTRFS Filesystem for /var/lib/docker
-    filesystem: fstype=btrfs dev={{ disk1 }}
-  - name: Mount BTRFS Filesystem for /var/lib/docker
-    mount: name=/var/lib/docker src={{ disk1 }} fstype=btrfs state=mounted
-  - name: Create BTRFS Filesystem for /opt/serviced/var/volumes
-    filesystem: fstype=btrfs dev={{ disk2 }}
-  - name: Mount BTRFS Filesystem for /opt/serviced/var/volumes
-    mount: name=/opt/serviced/var/volumes src={{ disk2 }} fstype=btrfs state=mounted
+  - debug: msg="disk1 is {{ disk1 }}"
+  - debug: msg="disk1.stat is {{ disk1.stat }}"
+  - debug: msg="disk1.stat.path is {{ disk1.stat.path }}"
+  - name: Create BTRFS Filesystem for /var/lib/docker on {{ disk1.stat.path }}
+    filesystem: fstype=btrfs dev={{ disk1.stat.path }}
+  - name: Mount BTRFS Filesystem of {{ disk1.stat.path}} for /var/lib/docker
+    mount: name=/var/lib/docker src={{ disk1.stat.path }} fstype=btrfs state=mounted
+  - name: Create BTRFS Filesystem for /opt/serviced/var/volumes on {{ disk2.stat.path }}
+    filesystem: fstype=btrfs dev={{ disk2.stat.path }}
+  - name: Mount BTRFS Filesystem for /opt/serviced/var/volumes on {{ disk2.stat.path }}
+    mount: name=/opt/serviced/var/volumes src={{ disk2.stat.path }} fstype=btrfs state=mounted
 

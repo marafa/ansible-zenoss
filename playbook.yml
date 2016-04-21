@@ -10,11 +10,14 @@
       disk2: /dev/xvde
     roles:
 # from installation guide
+#      - debug
       - installation_checks
       - installation_network
       - installation_logs
       - installation_selinux
+      - debug
       - installation_filesystems
+      - debug
       - installation_check_docker_dir
       - installation_repos
       - installation_check_docker_dir

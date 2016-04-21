@@ -6,8 +6,8 @@
     become_method: sudo 
     vars:
       disk0: /dev/xvda
-      disk1: /dev/xvdb
-      disk2: /dev/xvdc
+      disk1: /dev/xvdc
+      disk2: /dev/xvde
     roles:
 # from installation guide
       - installation_checks

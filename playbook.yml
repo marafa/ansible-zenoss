@@ -3,7 +3,7 @@
     tasks:
     gather_facts: true
     become: yes
-    become_user: sudo 
+    become_method: sudo 
     roles:
 # from installation guide
       - installation_checks

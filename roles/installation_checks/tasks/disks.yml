@@ -1,0 +1,12 @@
+---
+  - name: Check /dev/vdb
+    stat: path=/dev/vdb
+    register: vdb
+  - fail: msg="/dev/vdb not found!"
+    when: vdb.stat.exists == False
+
+  - name: Check /dev/vdc
+    stat: path=/dev/vdc
+    register: vdc
+  - fail: msg="/dev/vdc not found!"
+    when: vdb.stat.exists == False

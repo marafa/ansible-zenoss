@@ -3,4 +3,5 @@
   - include: cpu.yml 
   - include: fs.yml
   - include: RAM.yml
+  - include: disks.yml
 

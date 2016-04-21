@@ -42,3 +42,7 @@ Verify you can ssh to your Zenoss host using ssh keys AND that user can sudo wit
 Run ansible with following:
 
     ansible-playbook -i hosts playbook.yml 
+
+To test a role
+
+    ansible-play -i hosts -l localhost test_role.yml -e "ROLE=installation_checks"

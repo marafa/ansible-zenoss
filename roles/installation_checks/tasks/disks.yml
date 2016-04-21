@@ -1,12 +1,14 @@
 ---
-  - name: Check /dev/vdb
-    stat: path=/dev/vdb
-    register: vdb
-  - fail: msg="/dev/vdb not found!"
-    when: vdb.stat.exists == False
+  - name: Disk Check
+    debug: msg="This may fail for you. Modify the disk names"
+  - name: Check /dev/xvdb
+    stat: path=/dev/xvdb
+    register: xvdb
+  - fail: msg="/dev/xvdb not found!"
+    when: xvdb.stat.exists == False
 
-  - name: Check /dev/vdc
-    stat: path=/dev/vdc
-    register: vdc
-  - fail: msg="/dev/vdc not found!"
-    when: vdb.stat.exists == False
+  - name: Check /dev/xvdc
+    stat: path=/dev/xvdc
+    register: xvdc
+  - fail: msg="/dev/xvdc not found!"
+    when: xvdb.stat.exists == False

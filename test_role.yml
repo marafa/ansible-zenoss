@@ -2,7 +2,8 @@
   - hosts: all
     tasks:
     gather_facts: true
-    sudo: yes
+    become: yes
+    become_method: sudo 
     roles:
       - { role: '{{ROLE}}' }
 

@@ -1,14 +1,14 @@
 ---
   - name: Disk Check
-    debug: msg="This may fail for you. Modify the disk names"
-  - name: Check /dev/xvdb
-    stat: path=/dev/xvdb
-    register: xvdb
-  - fail: msg="/dev/xvdb not found!"
-    when: xvdb.stat.exists == False
+    debug: msg="This may fail for you. Modify the disk names in playbook.yml"
+  - name: Check {{ disk1 }}
+    stat: path={{ disk1 }}
+    register: disk1
+  - fail: msg="{{ disk1 }} not found!"
+    when: disk1.stat.exists == False
 
-  - name: Check /dev/xvdc
-    stat: path=/dev/xvdc
-    register: xvdc
-  - fail: msg="/dev/xvdc not found!"
-    when: xvdb.stat.exists == False
+  - name: Check {{ disk2 }}
+    stat: path={{ disk2 }}
+    register: disk2
+  - fail: msg="{{ disk2 }} not found!"
+    when: disk2.stat.exists == False

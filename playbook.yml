@@ -4,6 +4,10 @@
     gather_facts: true
     become: yes
     become_method: sudo 
+    vars:
+      disk0: /dev/xvda
+      disk1: /dev/xvdb
+      disk2: /dev/xvdc
     roles:
 # from installation guide
       - installation_checks

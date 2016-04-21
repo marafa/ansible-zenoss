@@ -5,11 +5,11 @@
     - /opt/serviced/var/volumes
     - /var/lib/docker
   - name: Create BTRFS Filesystem for /var/lib/docker
-    filesystem: fstype=btrfs dev=/dev/vdb
+    filesystem: fstype=btrfs dev={{ disk1 }}
   - name: Mount BTRFS Filesystem for /var/lib/docker
-    mount: name=/var/lib/docker src=/dev/vdb fstype=btrfs state=mounted
+    mount: name=/var/lib/docker src={{ disk1 }} fstype=btrfs state=mounted
   - name: Create BTRFS Filesystem for /opt/serviced/var/volumes
-    filesystem: fstype=btrfs dev=/dev/vdc
+    filesystem: fstype=btrfs dev={{ disk2 }}
   - name: Mount BTRFS Filesystem for /opt/serviced/var/volumes
-    mount: name=/opt/serviced/var/volumes src=/dev/vdc fstype=btrfs state=mounted
+    mount: name=/opt/serviced/var/volumes src={{ disk2 }} fstype=btrfs state=mounted
 

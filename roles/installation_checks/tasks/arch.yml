@@ -1,5 +1,5 @@
 ---
-  - name: Check CPU architecture
-    debug: msg="Continue only if {{ ansible_architecture }} == x86_64"
+#  - name: Check CPU architecture
+#    debug: msg="Continue only if {{ ansible_architecture }} == x86_64"
   - fail: msg="CPU not of type x86_64"
     when: ansible_architecture != "x86_64"

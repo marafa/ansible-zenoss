@@ -1,6 +1,6 @@
 ---
-  - name: Check number of CPUs
-    debug: msg="Continue only if {{ ansible_processor_vcpus }} >= 4"
+#  - name: Check number of CPUs
+#    debug: msg="Continue only if {{ ansible_processor_vcpus }} >= 4"
 #    failed_when: {{ ansible_processor_vcpus }} == 4
 #  - assert:      that:         - "4" in {{ ansible_processor_vcpus }}
   - fail: msg="CPUs must equal to or greater than 4"

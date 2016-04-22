@@ -9,7 +9,7 @@
       disk0: /dev/xvda
       disk1: /dev/xvdc
       disk2: /dev/xvde
-# NB: change to falkse if you do not want to use the docker project's repo. this means you have docker on an internal repo
+# NB: change to false if you do not want to use the docker project's repo. this means you have docker on an internal repo
       install_docker_repo: true
 # NB: leave blank if you do not use a proxy in your environment
       proxy_env:

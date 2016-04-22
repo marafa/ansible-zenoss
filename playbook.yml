@@ -8,16 +8,17 @@
       disk0: /dev/xvda
       disk1: /dev/xvdc
       disk2: /dev/xvde
+      install_docker_repo: true
+      proxy_env:
+        http_proxy: http://10.140.132.213:3128
+        https_proxy: https://10.140.132.213:3128
     roles:
 # from installation guide
-#      - debug
       - installation_checks
       - installation_network
       - installation_logs
       - installation_selinux
-      - debug
       - installation_filesystems
-      - debug
       - installation_check_docker_dir
       - installation_repos
       - installation_check_docker_dir

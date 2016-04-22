@@ -4,9 +4,6 @@
     with_items:
     - /opt/serviced/var/volumes
     - /var/lib/docker
-  - debug: msg="disk1 is {{ disk1 }}"
-  - debug: msg="disk1.stat is {{ disk1.stat }}"
-  - debug: msg="disk1.stat.path is {{ disk1.stat.path }}"
   - name: Create BTRFS Filesystem for /var/lib/docker on {{ disk1.stat.path }}
     filesystem: fstype=btrfs dev={{ disk1.stat.path }}
   - name: Mount BTRFS Filesystem of {{ disk1.stat.path}} for /var/lib/docker

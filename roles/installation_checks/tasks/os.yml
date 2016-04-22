@@ -1,4 +1,4 @@
 ---
   - fail: msg="{{ ansible_distribution }} is not RedHat or CentOS"
-    when: (ansible_distribution != "CentOS") or (ansible_distribution != "RedHat")
+    when: (ansible_distribution != "CentOS") and (ansible_distribution != "RedHat")
 

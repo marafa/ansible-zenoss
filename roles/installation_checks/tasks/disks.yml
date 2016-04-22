@@ -1,6 +1,7 @@
 ---
   - name: Disk Check
     debug: msg="This may fail for you. Modify the disk names in playbook.yml"
+
   - name: Check {{ disk1 }}
     stat: path={{ disk1 }}
     register: disk1

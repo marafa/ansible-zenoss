@@ -28,7 +28,7 @@ Clone this repo:
     $ git clone https://github.com/marafa/ansible-zenoss.git
     $ cd ansible-zenoss
 
-Make sure NTP is running, on AWS make sure UDP port 123 is open outbound. To check:
+Make sure NTP is running, this includes checking local and site firewalls. To check:
 
 	$ ntpstat
 If your output resembles the output below, then NTP is working:

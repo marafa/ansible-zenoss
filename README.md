@@ -17,7 +17,7 @@ requirements:
  * 1 network interface controller (must support TCP/IP)
  * The network latency among all hosts in a resource pool should be less than 5 milliseconds
  * Local storage is recommended, and SAN storage is supported
- * Minimum Local storage 30GB RHEL, 60GB Ubuntu
+ * Minimum Local storage 30GB x 2 disks
 
 
 

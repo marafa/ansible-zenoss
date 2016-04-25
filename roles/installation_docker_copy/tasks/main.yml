@@ -1,0 +1,9 @@
+--- 
+  - name: Copy docker files
+    copy: src=docker*rpm dest=/tmp/ 
+    when: install_docker_repo == False
+
+  - name: Install docker from local files
+    yum: name=/tmp/docker*rpm state=present
+    when: install_docker_repo == False
+

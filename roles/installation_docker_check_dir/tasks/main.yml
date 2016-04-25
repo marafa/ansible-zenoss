@@ -1,0 +1,7 @@
+---
+  - name: Check if path exists
+    stat: path=/var/lib/docker
+    register: check_path
+  - fail: msg="{{ check_path }} not found!"
+    when: check_path.stat.exists == False
+

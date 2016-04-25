@@ -22,14 +22,11 @@
       - installation_logs
       - installation_selinux
       - installation_filesystems
-      - installation_check_docker_dir
+      - installation_docker_copy
       - installation_repos
-      - installation_check_docker_dir
       - installation_serviced
       - installation_services
-      - installation_check_docker_dir
       - installation_docker-config
-      - installation_check_docker_dir
       - installation_complete
 # from configuration guide
       - config_zrm-config

@@ -1,3 +1,7 @@
 ---
-  - name: Check Size of {{ disk1 }} and {{ disk2 }}
-    debug: msg="TODO- Check Size of {{ disk1 }} and {{ disk2 }}"
+  - name: Check Size of {{ disk1.stat.path }} and {{ disk2.stat.path }}
+    debug: msg="TODO- Check Size of {{ disk1.stat.path }} and {{ disk2.stat.path }}"
+
+  #- debug: var=disk1
+
+#ansible_devices.xvde.size "30.00 GB"

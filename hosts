@@ -1,5 +1,4 @@
 [master]
-#localhost ansible_ssh_host=127.0.0.1
+localhost ansible_ssh_host=127.0.0.1
 #zenoss_test1 ansible_ssh_host=192.168.122.120
 #zenoss_test2 ansible_ssh_host=192.168.122.236
-dev-mon01-infra-zenoss-01

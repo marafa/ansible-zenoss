@@ -4,17 +4,17 @@
     gather_facts: true
     become: yes
     become_method: sudo 
-#!    vars:
+    vars:
 # NB: change the following to reflect your server's disk naming
-#!      disk0: /dev/xvda
-#!      disk1: /dev/xvdc
-#!      disk2: /dev/xvde
+#1      disk0: /dev/xvda
+#1      disk1: /dev/xvdc
+#1      disk2: /dev/xvde
 # NB: change to false if you do not want to use the docker project's repo. this means you have docker on an internal repo
-#!      install_docker_repo: false
+#2      install_docker_repo: false
 # NB: leave blank if you do not use a proxy in your environment
-#!      proxy_env:
-#!        http_proxy: http://$IP:$Port
-#!        https_proxy: https://$IP:$PORT
+      proxy_env:
+        http_proxy: http://$IP:$Port
+        https_proxy: https://$IP:$PORT
     roles:
 # from installation guide
       - installation_checks

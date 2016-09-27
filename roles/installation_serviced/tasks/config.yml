@@ -1,3 +1,5 @@
 ---
   - name: Reconfigure serviced for FS type
-    command: "sed -i -e 's|^#[^S]*\\(SERVICED_FS_TYPE=\\).*$|\\1btrfs|' /etc/default/serviced"
+#    command: "sed -i -e 's|^#[^S]*\\(SERVICED_FS_TYPE=\\).*$|\\1btrfs|' /etc/default/serviced"
+#    lineinfile: dest=/etc/default/serviced regexp='^#[^S]*\\(SERVICED_FS_TYPE=\\).*$' line='\\\1btrfs'
+    replace: dest=/etc/default/serviced regexp='# SERVICED_FS_TYPE=.*$' replace='SERVICED_FS_TYPE=btrfs'

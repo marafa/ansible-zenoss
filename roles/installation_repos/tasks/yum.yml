@@ -1,19 +1,25 @@
 ---
   - name: Install deltarpm
     yum: name=deltarpm state=latest
-    environment: "{{proxy_env}}"
+#    environment: "{{proxy_env}}"
   - name: Configure yum to skip-broken
     lineinfile: dest=/etc/yum.conf line="skip_broken=1"
   - name: Update all packages
     yum: name=* state=latest 
-    environment: "{{proxy_env}}"
+#    environment: "{{proxy_env}}"
   - name: Install packages
     yum: name={{ item }} state=present
-    environment: "{{proxy_env}}"
+#    environment: "{{proxy_env}}"
     with_items:
     - rpcbind
     - nfs-utils
     - ntp
     - dnsmasq
-    - http://get.zenoss.io/yum/zenoss-repo-1-1.x86_64.rpm
     - docker-engine-1.9.0
+
+  - name: Install Zenoss repo package
+    yum: name={{ item }} state=present
+#    environment: "{{proxy_env}}"
+    with_items:
+    - http://get.zenoss.io/yum/zenoss-repo-1-1.x86_64.rpm
+    when: install_docker_repo == True

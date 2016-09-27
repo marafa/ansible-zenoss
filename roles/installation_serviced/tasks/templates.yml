@@ -9,3 +9,4 @@
       - { name: 'Control-Center-Jenkins-template.json', url: 'https://raw.githubusercontent.com/monitoringartist/control-center-jenkins/master/Control-Center-Jenkins-template.json' }
       - { name: 'Control-Center-Gerrit-template.json', url: 'https://raw.githubusercontent.com/monitoringartist/control-center-gerrit/master/Control-Center-Gerrit-template.json' }
       - { name: 'Control-Center-Grafana-Demo-template.json', url: 'https://raw.githubusercontent.com/monitoringartist/control-center-grafana-demo/master/Control-Center-Grafana-Demo-template.json' }
+    when: install_docker_repo == False

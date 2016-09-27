@@ -3,5 +3,6 @@
   - include: user.yml
   - include: config.yml
   - include: templates.yml
+    when: install_docker_repo == True
   - include: zenoss-core.yml
   - include: packages.yml

@@ -2,3 +2,5 @@
 - include: docker_repo.yml
 - include: yum.yml
 - include: zenoss.yml
+  when: install_docker_repo == True
+

@@ -23,6 +23,8 @@
       - installation_selinux
       - installation_filesystems
       - installation_docker_copy
+      - role: installation_containers
+        when: install_docker_repo == False
       - installation_zenoss  
       - installation_repos
       - installation_serviced

@@ -2,6 +2,6 @@
   - include: os.yml
   - include: arch.yml 
   - include: cpu.yml 
-#  - include: RAM.yml
-#  - include: disks.yml
+  - include: RAM.yml
+  - include: disks.yml
   - include: fs.yml

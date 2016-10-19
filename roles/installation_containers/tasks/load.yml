@@ -1,0 +1,18 @@
+---
+  - name: Load containers into local registry
+    raw: docker load < /tmp/{{ item }}
+    with_items:
+      - zenoss_core_5.1_5.1.7.tar  
+      - zenoss_serviced_isvcs_v48.tar
+      - zenoss_svcs-zookeeper_v3.tar
+
+#  - name: Import containers into local registry
+#    raw: docker import 
+#
+#
+  - name: Load containers
+    raw: docker load < /tmp/{{ item.tarball }} 
+    with_items:
+      - {tarball: zenoss_core_5.1_5.1.7.tar, user: zenoss, image: core_5.1, tag: 5.1.7}
+      - {tarball: zenoss_serviced_isvcs_v48.tar, user: zenoss, image: serviced_isvcs, tag: v48}
+      - {tarball: zenoss_svcs-zookeeper_v3.tar, user: zenoss, image: svcs_zookeper, tag: v3}

@@ -1,0 +1,24 @@
+---
+  - name: Load container image (zenoss/core_5.1:5.1.7) into local registry
+    docker_image:
+      name: core_5.1
+      tag: 5.1.7
+      repository: localhost:5000/zenoss
+      load_path: /tmp/zenoss_core_5.1_5.1.7.tar
+#      push: yes
+
+  - name: Import container image (zenoss/serviced_isvcs:v48) into local registry
+    docker_image:
+      name: serviced_isvcs
+      tag: v48
+      repository: localhost:5000/zenoss
+      load_path: /tmp/zenoss_serviced_isvcs_v48.tar
+#      push: yes
+
+  - name: Import container image (zenoss/svcs-zookeeper:v3) into local registry
+    docker_image:
+      name: svcs-zookeeper
+      tag: v4
+      repository: localhost:5000/zenoss
+      load_path: /tmp/zenoss_svcs-zookeeper_v3.tar
+#      push: yes

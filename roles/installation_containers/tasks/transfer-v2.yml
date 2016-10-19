@@ -1,0 +1,46 @@
+---
+  - name: Copy Zenoss container images
+    copy: src=../files/{{ item }} dest=/tmp
+    with_items:
+      - zenoss_core_5.1_5.1.7.tar.gz  
+      - zenoss_serviced-isvcs_v48.tar.gz
+      - zenoss_isvcs-zookeeper_v3.tar.gz
+
+#  - name: Extract archives of Zenoss container images
+#    unarchive: src={{ item }} dest=/tmp/
+#    with_items:
+#      - zenoss_core_5.1_5.1.7.tar.gz  
+#      - zenoss_serviced_isvcs_v48.tar.gz
+#      - zenoss_svcs-zookeeper_v3.tar.gz
+#    remote_src: yes
+
+  - name: Gunzip Zenoss container image tarballs
+    command: gunzip /tmp/{{ item }}
+    with_items:
+      - zenoss_core_5.1_5.1.7.tar.gz
+      - zenoss_serviced-isvcs_v48.tar.gz
+      - zenoss_isvcs-zookeeper_v3.tar.gz
+
+  - name: Load container image (zenoss/core_5.1:5.1.7) into local registry
+    docker_image:
+      name: core_5.1
+      tag: 5.1.7
+      repository: localhost:5001/zenoss
+      load_path: /tmp/zenoss_core_5.1_5.1.7.tar
+      push: yes
+
+  - name: Import container image (zenoss/serviced_isvcs:v48) into local registry
+    docker_image:
+      name: serviced_isvcs
+      tag: v48
+      repository: localhost:5001/zenoss
+      load_path: /tmp/zenoss_serviced_isvcs_v48.tar
+      push: yes
+
+  - name: Import container image (zenoss/svcs-zookeeper:v3) into local registry
+    docker_image:
+      name: svcs-zookeeper
+      tag: v4
+      repository: localhost:5001/zenoss
+      load_path: /tmp/zenoss_isvcs-zookeeper_v3.tar
+      push: yes

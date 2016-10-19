@@ -1,0 +1,24 @@
+---
+  - name: Pull images from docker.io public registry
+    local_action: shell docker pull {{ item }}
+    with_items:
+      - zenoss/core_5.1:5.1.8
+      - zenoss/serviced-isvcs:v49
+      - zenoss/isvcs-zookeeper:v7  
+
+  - name: Tag pulled images
+    local_action: shell docker tag {{ item }} {{ registry }}/{{ item }}
+    with_items:
+      - zenoss/core_5.1:5.1.8
+      - zenoss/serviced-isvcs:v49
+      - zenoss/isvcs-zookeeper:v7  
+
+  - name: Push tagged images to local registry at {{ registry }}
+    local_action: shell docker push {{ registry }}/{{ item }}
+    with_items:
+      - zenoss/core_5.1:5.1.8
+      - zenoss/serviced-isvcs:v49
+      - zenoss/isvcs-zookeeper:v7
+
+  - name: Verify images are pushed to registry at {{ registry }}
+    local_action: shell docker search {{ registry }}/zenoss

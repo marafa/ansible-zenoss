@@ -10,8 +10,10 @@ disk1: /dev/xvdc
 disk2: /dev/xvde
 
 # NB: change to false if you do not want to use the docker project's repo. this means you have docker on an internal repo
-install_docker_repo: false
+install_docker_repo: true
 # NB: leave blank if you do not use a proxy in your environment
 proxy_env:
   http_proxy: http://$IP:$Port
   https_proxy: https://$IP:$PORT
+docker_version: 1.12.1-1.el7.centos
+#docker_Version: 1.9.0

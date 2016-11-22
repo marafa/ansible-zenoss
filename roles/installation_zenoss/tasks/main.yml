@@ -5,7 +5,6 @@
       - serviced-1.1.8-1.x86_64.rpm
       - zenoss-core-service-5.1.7-1.noarch.rpm  
       - zenoss-resmgr-service-5.1.7-1.noarch.rpm
-    when: install_docker_repo == False
 
   - name: Install zenoss from local files
     yum: name=/tmp/{{ item }} state=present
@@ -13,4 +12,3 @@
       - serviced-1.1.8-1.x86_64.rpm
       - zenoss-resmgr-service-5.1.7-1.noarch.rpm
       - zenoss-core-service-5.1.7-1.noarch.rpm  
-    when: install_docker_repo == False

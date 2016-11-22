@@ -22,11 +22,18 @@
       - installation_logs
       - installation_selinux
       - installation_filesystems
-      - installation_docker_copy
+#copy docker rpms over to the target server
+      - role: installation_docker_copy
+        when: install_docker_repo == False
+#copy images from public to local registry
       - role: installation_containers
         when: install_docker_repo == False
-      - installation_zenoss  
-      - installation_repos
+#copy zenoss rpms over to the target server
+      - role: installation_zenoss  
+        when: install_docker_repo == False
+#install from yum repos
+      - role: installation_repos
+        when: install_docker_repo == True
       - installation_serviced
       - installation_services
       - installation_docker-config

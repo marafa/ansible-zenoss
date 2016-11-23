@@ -1,13 +1,13 @@
 #vars:
 # NB: change the following to reflect your server's disk naming
-#4disk0: /dev/vda
-#4disk1: /dev/vdb
-#4disk2: /dev/vdc
+disk0: /dev/vda
+disk1: /dev/vdb
+disk2: /dev/vdc
 
 
-disk0: /dev/xvda
-disk1: /dev/xvdc
-disk2: /dev/xvde
+#disk0: /dev/xvda
+#disk1: /dev/xvdc
+#disk2: /dev/xvde
 
 # NB: change to false if you do not want to use the docker project's repo. this means you have docker on an internal repo
 install_docker_repo: true

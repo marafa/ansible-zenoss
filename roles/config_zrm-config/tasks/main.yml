@@ -4,4 +4,3 @@
 
   - name: Warning
     debug: msg="Change default passwords via Control Center"
-

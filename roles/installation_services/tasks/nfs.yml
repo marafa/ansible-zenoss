@@ -1,4 +1,7 @@
 ---
   - name: Reconfigure NFS
 #    command: "sed -i -e 's/\\(Requires=.*\\)rpcbind.target/\\1rpcbind.service/' /usr/lib/systemd/system/nfs-server.service"
-    lineinfile: dest=/usr/lib/systemd/system/nfs-server.service regexp='\\(Requires=.*\\)rpcbind.target' line='\\1rpcbind.service'
+    lineinfile: dest=/usr/lib/systemd/system/nfs-server.service 
+                regexp='\\(Requires=.*\\)rpcbind.target' 
+                line='\\1rpcbind.service' 
+                state=present

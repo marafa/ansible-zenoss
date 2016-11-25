@@ -41,7 +41,7 @@ Verify you can ssh to your Zenoss host using ssh keys AND that user can sudo wit
 
 ## To use
 
-Modify the variables section in playbook.yml to suit your environment
+Modify the variables group_vars/all.yml to suit your environment
 
 Run ansible with following:
 

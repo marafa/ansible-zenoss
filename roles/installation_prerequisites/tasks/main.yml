@@ -1,0 +1,15 @@
+---
+  - name: Install prerequisite packages
+    yum: name {{ item }} state=latest
+    with_items:
+      - ntp
+
+  - name: Enable services
+    serviced: name={{ item }} state=enabled
+    with_items:
+      - ntp
+
+  - name: Start services
+    serviced: name={{ item }} state=enabled
+    with_items:
+      - ntp

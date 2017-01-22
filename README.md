@@ -35,7 +35,7 @@ If your output resembles the output below, then NTP is working:
 
 	synchronised to NTP server (12.34.56.78) at stratum 3 ....
 
-Modify your hosts file to put your Zenoss server's IP
+Modify your hosts inventory/file to put your Zenoss server's IP
 
 Verify you can ssh to your Zenoss host using ssh keys AND that user can sudo without a password
 
@@ -48,5 +48,6 @@ Run ansible with following:
     ansible-playbook -i hosts playbook.yml 
 
 To test a role
+(This is useful when you want to verify your server meets Zenoss specs)
 
     ansible-play -i hosts -l localhost test_role.yml -e "ROLE=installation_checks"

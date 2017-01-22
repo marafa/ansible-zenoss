@@ -4,13 +4,9 @@
     gather_facts: true
     become: yes
     become_method: sudo 
-    vars:
-      disk0: /dev/xvda
-      disk1: /dev/xvdc
-      disk2: /dev/xvde
-      install_docker_repo: false
-      proxy_env:
-        http_proxy: http://10.140.132.213:3128
-        https_proxy: https://10.140.132.213:3128
+#    vars:
+#      proxy_env:
+#        http_proxy: http://10.140.132.213:3128
+#        https_proxy: https://10.140.132.213:3128
     roles:
     - { role: '{{ROLE}}' }

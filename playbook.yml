@@ -5,12 +5,8 @@
     become: yes
     become_method: sudo 
     vars:
-# NB: change the following to reflect your server's disk naming
-#1      disk0: /dev/xvda
-#1      disk1: /dev/xvdc
-#1      disk2: /dev/xvde
-# NB: change to false if you do not want to use the docker project's repo. this means you have docker on an internal repo
-#2      install_docker_repo: false
+# NB: some variables have moved to group_vars/all.yml
+#
 # NB: leave blank if you do not use a proxy in your environment
       proxy_env:
         http_proxy: http://$IP:$Port

@@ -4,3 +4,8 @@
 
   - name: Warning
     debug: msg="Change default passwords via Control Center"
+
+  - debug: Now pulling container images from docker hub. This could take time depending on your internet connection
+
+  - name: Wait for Control Center to start
+    wait_for: port=443 state=started delay=600

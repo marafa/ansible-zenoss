@@ -36,3 +36,4 @@
       - installation_complete
 # from configuration guide
       - config_zrm-config
+      - config_zrm-start

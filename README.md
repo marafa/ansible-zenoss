@@ -19,8 +19,6 @@ requirements:
  * Local storage is recommended, and SAN storage is supported
  * Minimum Local storage 30GB x 2 disks
 
-
-
 ## Installation
 
 Clone this repo:
@@ -38,6 +36,9 @@ If your output resembles the output below, then NTP is working:
 Modify your hosts inventory/file to put your Zenoss server's IP
 
 Verify you can ssh to your Zenoss host using ssh keys AND that user can sudo without a password
+
+## Notes
+ * The speed of the installation is dependent on your internet connection. It can take an hour or more.
 
 ## To use
 

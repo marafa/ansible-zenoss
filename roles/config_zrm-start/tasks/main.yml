@@ -1,3 +1,5 @@
 ---
   - name: Start Zernoss Resource Manager
     shell: serviced service start Zenoss.resmgr
+
+  - debug: Started pulling dockerhub images. Follow in Control Center for when it starts"

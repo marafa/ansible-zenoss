@@ -1,3 +1,3 @@
 ---
   - name: Add host to serviced
-    shell: serviced host add {{ ansible_fqdn }}:4979 default
+    shell: serviced host add {{ ansible_fqdn }}:4979 default --register
